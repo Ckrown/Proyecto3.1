@@ -1,0 +1,12 @@
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.texto {
+    margin-right: 100px;
+}
+.imagen{
+    width: 750px;
+    height:500px;
+}
