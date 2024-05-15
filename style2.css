@@ -90,16 +90,30 @@ input[type="submit"]:hover{
     font-size: 16px;
     color: black;
 }
-.registrarse{
+.registrar{
     margin: 30px;
     text-align: center;
     font-size: 16px;
     color: black;
 }
-.registrarse a{
+.registrar a{
     color: blue;
     text-decoration: none;
 }
-.registrarse a:hower{
+.registrar a:hower{
+    text-decoration: underline;
+}
+
+.inicio{
+    margin: 30px;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+}
+.inicio a{
+    color: blue;
+    text-decoration: none;
+}
+.inicio a:hower{
     text-decoration: underline;
 }
