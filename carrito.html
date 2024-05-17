@@ -23,10 +23,10 @@
               <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link" href="#">Catálogo</a>
+              <a class="nav-link" href="vista2.html">Catálogo</a>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link" href="carrito.html" id="cartLink">Carrito <span class="badge bg-secondary" id="cartItemCount"></span></a>
+              <a class="nav-link" href="#" id="cartLink">Carrito <span class="badge bg-secondary" id="cartItemCount">0</span></a>
             </li>
           </ul>
         </div>
@@ -35,21 +35,24 @@
   </header>
   <main>
     <div class="container mt-5">
-      <h1 class="text-center mb-4">Catálogo de Productos</h1>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <!-- Ejemplo de producto en el catálogo -->
-        <div class="col">
-          <div class="card">
-            <img src="../Proyecto3.1/Imagenes/retro1.2.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Retro 1</h5>
-              <p class="card-text">$150</p>
-              <button class="btn btn-primary addToCartBtn" data-product-name="Retro 1" data-product-price="150">Agregar al Carrito</button>
-            </div>
-          </div>
-        </div>
-        <!-- Agrega más productos aquí -->
-        
+      <h1 class="text-center mb-4">Carrito de Compra</h1>
+      <table class="table" id="cartTable">
+        <thead>
+          <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se agregarán las filas de productos -->
+        </tbody>
+      </table>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary me-md-2" type="button" id="clearCartBtn">Vaciar Carrito</button>
+        <button class="btn btn-success" type="button" id="checkoutBtn">Comprar</button>
       </div>
     </div>
   </main>
@@ -59,6 +62,8 @@
       const cartTableBody = document.querySelector("#cartTable tbody");
       const cartLink = document.querySelector("#cartLink");
       const cartItemCount = document.querySelector("#cartItemCount");
+      const clearCartBtn = document.querySelector("#clearCartBtn");
+      const checkoutBtn = document.querySelector("#checkoutBtn");
 
       // Función para actualizar el contador de elementos en el carrito
       function updateCartItemCount() {
@@ -92,7 +97,20 @@
         document.querySelector("#cartTotal").textContent = "$" + total.toFixed(2);
       }
 
-      // Evento para manejar clics en los botones de eliminar producto
+      // Evento para manejar clics en el botón de vaciar carrito
+      clearCartBtn.addEventListener("click", function () {
+        cartTableBody.innerHTML = "";
+        updateCartItemCount();
+        updateTotal();
+      });
+
+      // Evento para manejar clics en el botón de comprar
+      checkoutBtn.addEventListener("click", function () {
+        alert("Procesando compra...");
+        // Aquí podrías enviar la información del carrito al servidor para procesar la compra
+      });
+
+      // Evento delegado para manejar clics en los botones de eliminar producto
       cartTableBody.addEventListener("click", function (event) {
         if (event.target.classList.contains("deleteBtn")) {
           event.target.closest("tr").remove();
@@ -101,13 +119,11 @@
         }
       });
 
-      // Evento delegado para manejar clics en los botones "Agregar al Carrito"
-      document.querySelectorAll(".addToCartBtn").forEach(btn => {
-        btn.addEventListener("click", function () {
-          const productName = this.getAttribute("data-product-name");
-          const productPrice = parseFloat(this.getAttribute("data-product-price"));
-          addToCart(productName, productPrice);
-        });
+      // Evento para manejar la recepción de mensajes desde la página del catálogo
+      window.addEventListener("message", function (event) {
+        if (event.origin !== "https://ruta-de-tu-catalogo.com") return; // Reemplaza con la URL de tu catálogo
+        const { productName, price } = event.data;
+        addToCart(productName, price);
       });
     });
   </script>

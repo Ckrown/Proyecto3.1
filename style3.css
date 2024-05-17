@@ -4,3 +4,27 @@ body {
     font-family: times;
     background: white;
 }
+.carousel-caption h5 {
+    font-family: Arial, sans-serif; 
+}
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+.faq-section {
+    padding: 50px 0;
+}
+.faq-question {
+    cursor: pointer;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+}
+.faq-question:hover {
+    background-color: #f8f9fa;
+}
+.faq-answer {
+    display: none;
+    padding: 15px;
+}
