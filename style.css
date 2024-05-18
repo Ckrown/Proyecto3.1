@@ -10,3 +10,14 @@
     width: 750px;
     height:500px;
 }
+
+.navbar-custom .nav-link {
+    color: white !important; 
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+    background-image: url(../Proyecto3.1/Imagenes/marmol4.jpg);
+    height: 100vh;
+}

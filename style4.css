@@ -5,3 +5,6 @@ body {
     background-image: url(../Proyecto3.1/Imagenes/marmol4.jpg);
     height: 100vh;
 }
+.navbar-custom .nav-link {
+    color: white !important; 
+}

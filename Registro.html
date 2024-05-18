@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,9 +13,9 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <form action="" id="formulario" class="col-6 text-center mx-auto shadow-lg mt-5">
+            <form action="" id="formulario" class="col-6 text-center mx-auto shadow-lg mt-5 formulario-blanco ">
                 <div class="my-3">
-                    <h4>Formulario de registro</h4>
+                    <h4>Bienvenid@</h4>
                 </div>
                 <div class="form-floating w-50 mx-auto mb-3">
                     <input type="text" class="form-control" id="txtRut" name="txtRut" placeholder="Ingrese su rut"
@@ -29,25 +29,21 @@
                 </div>
                 <div class="row mx-auto">
                     <div class="col mb-3">
-                        <div class="form-floating w-50 ms-auto">
+                        <div class="form-floating w-55 ms-auto">
                             <input type="text" class="form-control" id="txtAppaterno" name="txtAppaterno"
                                 placeholder="Apellido paterno" required>
                             <label for="txtAppaterno">Apellido paterno</label>
                         </div>
                     </div>
                     <div class="col mb-3">
-                        <div class="form-floating w-50">
+                        <div class="form-floating w-55">
                             <input type="text" class="form-control" id="txtApmaterno" name="txtApmaterno"
                                 placeholder="Apellido materno" required>
                             <label for="txtApmaterno">Apellido materno</label>
                         </div>
                     </div>
                 </div>
-                <div class="form-floating w-50 mx-auto mb-3">
-                    <input type="date" class="form-control" id="txtFecha" name="txtFecha"
-                        placeholder="Fecha de Nacimiento" required>
-                    <label for="txtFecha">Fecha de Nacimiento</label>
-                </div>
+                
                 <div class="form-floating w-50 mx-auto mb-3">
                     <input type="number" class="form-control" id="txtEdad" name="txtEdad" placeholder="Edad" required>
                     <label for="txtEdad">Edad</label>
@@ -88,22 +84,15 @@
                         required>
                     <label for="txtTelefono">Telefono</label>
                 </div>
-                <div class="form-floating w-50 mx-auto mb-3">
-                    <input type="text" class="form-control" id="txtProf" name="txtProf" placeholder="Profesion"
-                        required>
-                    <label for="txtProf">Profesion</label>
-                </div>
-                <div class="form-floating w-50 mx-auto mb-5 ">
-                    <textarea class="form-control" id="txtComentario" name="txtComentario" placeholder="Comentario"
-                        required style="height: 200px;resize: none;"></textarea>
-                    <label for="txtComentario">Aspiraciones</label>
-                </div>
+                
+              
                 <div id="check">
 
-                </div>                
+                </div>            
+                
                 <div class="w-50 mx-auto mb-3">
-                    <button type="button" id="btnEnviar" class="btn btn-outline-primary">Ingresar</button>
-                    <button type="button" id="btnGenerar" class="btn btn-outline-success">Generar Carta</button>
+                    <button type="button" id="btnGenerar" class="btn btn-outline-success">Registrarse</button>
+                    <button type="button" id="btnIrAVista4" class="btn btn-outline-primary" onclick="window.location.href = 'vista4.html';">Volver</button>
                 </div>
 
 
@@ -114,17 +103,16 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5 text-center mx-auto" id="exampleModalLabel">Carta Generada</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <h1 class="modal-title fs-5 text-center mx-auto" id="exampleModalLabel">Registro Completado</h1>
+                        
                         </div>
                         <div class="modal-body">
                             <div class="w-50 text-center mx-auto" id="res">
 
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        </div>
+                        <div class="inicio">
+                            <a href="index.html">Inicio</a>
                     </div>
                 </div>
             </div>

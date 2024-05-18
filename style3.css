@@ -1,18 +1,65 @@
+
 body {
     margin: 0;
     padding: 0;
-    font-family: times;
+    font-family: 'Times New Roman', Times, serif;
     background: white;
 }
-.carousel-caption h5 {
-    font-family: Arial, sans-serif; 
+
+.navbar-brand img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto; 
 }
-body {
+
+.carousel-item img {
+    width: 50%; 
+    height: auto;
+    display: block;
+    margin: auto; 
+}
+
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+h1, p {
     font-family: 'Times New Roman', Times, serif;
+    color: black;
+    margin-bottom: 10px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadeIn 3s ease forwards;
 }
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.navbar-custom .nav-link {
+    color: white !important; 
+}
+
+
 .faq-section {
     padding: 50px 0;
 }
+
 .faq-question {
     cursor: pointer;
     border: 1px solid #dee2e6;
@@ -21,9 +68,11 @@ body {
     padding: 15px;
     transition: background-color 0.3s ease;
 }
+
 .faq-question:hover {
     background-color: #f8f9fa;
 }
+
 .faq-answer {
     display: none;
     padding: 15px;

@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+    background-image: url(../Proyecto3.1/Imagenes/marmol4.jpg);
+    height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-info {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.contact-info h2 {
+    margin: 10px 0;
+}
+
+
+
+.btn-custom {
+    background-color: #007bff;
+    color: #fff; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    border: none; 
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+
+
+.btn-custom:hover {
+    background-color: #0056b3; 
+}
+
+
+.btn-custom i {
+    margin-right: 5px; 
+}

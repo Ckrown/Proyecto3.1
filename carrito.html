@@ -9,7 +9,7 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg  bg-dark navbar-custom">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="../Proyecto3.1/Imagenes/logo.jpg.jpg" alt="" width="64" height="64">
@@ -47,7 +47,7 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Aquí se agregarán las filas de productos -->
+
         </tbody>
       </table>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -65,13 +65,11 @@
       const clearCartBtn = document.querySelector("#clearCartBtn");
       const checkoutBtn = document.querySelector("#checkoutBtn");
 
-      // Función para actualizar el contador de elementos en el carrito
       function updateCartItemCount() {
         const itemCount = cartTableBody.querySelectorAll("tr").length;
         cartItemCount.textContent = itemCount;
       }
 
-      // Función para agregar un producto al carrito
       function addToCart(productName, price) {
         const newRow = document.createElement("tr");
         newRow.innerHTML = `
@@ -86,31 +84,30 @@
         updateTotal();
       }
 
-      // Función para actualizar el total del carrito
+      
       function updateTotal() {
         let total = 0;
         cartTableBody.querySelectorAll("tr").forEach(row => {
           const subtotal = parseFloat(row.cells[3].textContent.replace("$", ""));
           total += subtotal;
         });
-        // Actualizar total en la interfaz
         document.querySelector("#cartTotal").textContent = "$" + total.toFixed(2);
       }
 
-      // Evento para manejar clics en el botón de vaciar carrito
+      
       clearCartBtn.addEventListener("click", function () {
         cartTableBody.innerHTML = "";
         updateCartItemCount();
         updateTotal();
       });
 
-      // Evento para manejar clics en el botón de comprar
+      
       checkoutBtn.addEventListener("click", function () {
         alert("Procesando compra...");
-        // Aquí podrías enviar la información del carrito al servidor para procesar la compra
+        
       });
 
-      // Evento delegado para manejar clics en los botones de eliminar producto
+      
       cartTableBody.addEventListener("click", function (event) {
         if (event.target.classList.contains("deleteBtn")) {
           event.target.closest("tr").remove();
@@ -119,13 +116,34 @@
         }
       });
 
-      // Evento para manejar la recepción de mensajes desde la página del catálogo
       window.addEventListener("message", function (event) {
-        if (event.origin !== "https://ruta-de-tu-catalogo.com") return; // Reemplaza con la URL de tu catálogo
+        if (event.origin !== "vista2.html") return; 
         const { productName, price } = event.data;
         addToCart(productName, price);
       });
     });
+  </script> 
+  <script>
+    window.addEventListener("message", function (event) {
+      if (event.origin !== "../Proyecto3.1/vista2.html") return; 
+      const { productName, price } = event.data;
+      addToCart(productName, price);
+    });
+
+    function addToCart(productName, price) {
+      const cartTableBody = document.querySelector("#cartTable tbody");
+      const newRow = document.createElement("tr");
+      newRow.innerHTML = `
+        <td>${productName}</td>
+        <td>$${price}</td>
+        <td>1</td>
+        <td>$${price}</td>
+        <td><button class="btn btn-sm btn-danger deleteBtn">Eliminar</button></td>
+      `;
+      cartTableBody.appendChild(newRow);
+      updateCartItemCount();
+      updateTotal();
+    }
   </script>
 </body>
 </html>
