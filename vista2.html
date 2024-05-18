@@ -1,44 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="style2.css">
-    <link rel="stylesheet" href="../Proyecto3.1/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-image: url(../Proyecto3.1/Imagenes/marmol4.jpg);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compra</title>
+  <link rel="stylesheet" href="../Proyecto3.1/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style4.css">
 </head>
 <body>
-    <div class="formulario">
-        <h1>Inicio de sesión</h1>
-        <form method="post">
-            <div class="input-field">
-                <input type="text" required>
-                <label>Nombre de usuario</label>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-custom navbar-custom">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../Proyecto3.1/Imagenes/logo.jpg.jpg" alt="" width="64" height="64">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 h2">
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="#">Catálogo</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="carrito.html" id="cartLink">Carrito <span class="badge bg-secondary" id="cartItemCount"></span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">Catálogo de Productos</h1>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card">
+            <img src="../Proyecto3.1/Imagenes/retro1.2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Retro 1 Blue</h5>
+              <p class="card-text">$160</p>
+              <button class="btn btn-primary addToCartBtn" onclick="addToCart('Retro 1 Blue', 160)">Agregar al Carrito</button>
+
             </div>
-            <div class="input-field">
-                <input type="password" required>
-                <label>Contraseña</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="./Imagenes/space.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Retro 1 Space Jam</h5>
+              <p class="card-text">$180</p>
+              <button class="btn btn-primary addToCartBtn" data-product-name="Retro 1" data-product-price="150">Agregar al Carrito</button>
             </div>
-            <div class="options">
-                <div class="recordar">¿Olvidó su contraseña?</div>
-                <div class="registrar">¿No tiene una cuenta? <a href="Registro.html">Registrarse</a></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="../Proyecto3.1/Imagenes/retro1.jpg.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Retro 1 Bred</h5>
+              <p class="card-text">$150</p>
+              <button class="btn btn-primary addToCartBtn" data-product-name="Retro 1" data-product-price="150">Agregar al Carrito</button>
             </div>
-            <input type="submit" value="Iniciar Sesión">
-        </form>
-        <div class="inicio"><a href="index.html">Inicio</a></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="../Proyecto3.1/Imagenes/retro4.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Retro 4 Black Cat</h5>
+              <p class="card-text">$230</p>
+              <button class="btn btn-primary addToCartBtn" data-product-name="Retro 1" data-product-price="150">Agregar al Carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="../Proyecto3.1/Imagenes/retro1.11.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Nike Blue</h5>
+              <p class="card-text">$90</p>
+              <button class="btn btn-primary addToCartBtn" data-product-name="Retro 1" data-product-price="150">Agregar al Carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="../Proyecto3.1/Imagenes/tra.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Retro Travist</h5>
+              <p class="card-text">Próximamente</p>
+            </div>
+          </div>
     </div>
-    <script src="../Proyecto3.1/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+  </main>
+  <script src="../Proyecto3.1/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function addToCart(productName, price) {
+      const productData = {
+        productName: productName,
+        price: price
+      };
+      window.opener.postMessage(productData, "*");
+    }
+  </script>
 </body>
 </html>
